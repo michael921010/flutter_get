@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 import 'package:flutter_get/pages/about_page.dart';
 import 'package:flutter_get/services/controller.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<HomePage> createState() => HomePageState();
+  State<ProfilePage> createState() => ProfilePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class ProfilePageState extends State<ProfilePage> {
   var count = 0.obs;
 
   // set controller as dispatcher from Controller
@@ -49,7 +49,7 @@ class HomePageState extends State<HomePage> {
               ),
             ),
             ElevatedButton(
-              child: const Text('Next Route'),
+              child: const Text('About Page'),
               onPressed: () {
                 Get.to(AboutPage());
               },

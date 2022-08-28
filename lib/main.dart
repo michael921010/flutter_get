@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_get/pages/home_page.dart';
+import 'package:flutter_get/pages/home/home_view.dart';
+import 'package:flutter_get/pages/home/home_bindings.dart';
+import 'package:flutter_get/pages/profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +18,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(
-        title: 'Flutter Demo Home Page',
-      ),
+      initialRoute: '/home',
+      getPages: [
+        GetPage(
+          name: '/home',
+          page: () => HomeView(
+            title: 'Flutter Demo Home Page',
+          ),
+          binding: HomeBinding(),
+        ),
+        GetPage(
+          name: '/profile',
+          page: () => const ProfilePage(
+            title: 'Profile',
+          ),
+        ),
+      ],
     );
   }
 }
