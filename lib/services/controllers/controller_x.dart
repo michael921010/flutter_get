@@ -11,6 +11,7 @@ class ControllerX extends GetxController {
   final count2 = 0.obs;
   final list = [56].obs;
   final user = User().obs;
+  final flag = false.obs;
 
   updateUser() {
     user.update((value) {

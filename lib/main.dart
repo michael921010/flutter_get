@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:flutter_get/pages/home/home_view.dart';
 import 'package:flutter_get/services/bindings/home_bindings.dart';
 import 'package:flutter_get/services/bindings/sample_bindings.dart';
+import 'package:flutter_get/services/bindings/mixin_bindings.dart';
 import 'package:flutter_get/pages/profile_page.dart';
 import 'package:flutter_get/services/translations.dart';
 import 'package:flutter_get/pages/first.dart';
 import 'package:flutter_get/pages/second.dart';
 import 'package:flutter_get/pages/third.dart';
+import 'package:flutter_get/pages/mixin_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,11 +26,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      defaultTransition: Transition.native,
+      defaultTransition: Transition.fade,
       translations: MyTranslations(),
       locale: const Locale('pt', 'BR'),
-      initialRoute: '/first',
+      // locale: Get.deviceLocale, // with device locale
+      initialRoute: '/mixin',
       getPages: [
+        GetPage(
+          name: '/mixin',
+          page: () => const MixinPage(),
+          binding: MixinBind(),
+        ),
         GetPage(
           name: '/first',
           page: () => const First(),
@@ -42,7 +50,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/third',
           transition: Transition.cupertino,
-          page: () => const Third(),
+          page: () => Third(),
         ),
         //
         GetPage(
