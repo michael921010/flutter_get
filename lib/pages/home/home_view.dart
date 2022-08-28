@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_get/services/controller.dart';
+import 'package:flutter_get/services/controllers/controller.dart';
 
 class HomeView extends GetView<Controller> {
   HomeView({Key? key, required this.title}) : super(key: key);
