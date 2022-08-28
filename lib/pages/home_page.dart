@@ -36,8 +36,8 @@ class HomePageState extends State<HomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            GetBuilder<Controller>(
-              builder: (_) => Text(
+            Obx(
+              () => Text(
                 'controller count: ${controller.count}',
                 style: Theme.of(context).textTheme.headline4,
               ),
